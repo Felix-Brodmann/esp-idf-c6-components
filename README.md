@@ -23,7 +23,6 @@ Clone the repository into your ESP-IDF project `lib` folder:
 ```bash
 cd your-esp-idf-project/lib
 git clone https://github.com/Felix-Brodmann/esp-idf-c6-components.git
-git clone https://github.com/your-username/your-project.git
 ```
 
 Then, include the necessary headers in your source files.
