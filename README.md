@@ -28,6 +28,8 @@ git clone https://github.com/your-username/your-project.git
 
 Then, include the necessary headers in your source files.
 
+This project was developed and tested with PlatformIO using the ESP-IDF framework for the ESP32-C6.
+
 ---
 
 ## 🛠 Usage
@@ -70,14 +72,20 @@ your-project/
 
 ## ⚙ Configuration
 
-Most components require GPIO pins configuration:
+The esp-idf-lib/dht and espressif/led_strip components are used, therefore make sure you add following dependencies to your `idf_component.yml`:
 
-```cpp
-Dht11 sensor(GPIO_NUM_4);   // GPIO connected to DHT11
-Button button(GPIO_NUM_5);  // GPIO connected to button
+```yml
+dependencies:
+  esp-idf-lib/dht: "^1.1.7"
+  espressif/led_strip: "^3"
 ```
 
-No additional configuration is required for most components.
+The Display component simply wraps the initialization of the LovyanGFX library, so
+you need to add following line to you `platformio.ini`:
+
+```ini
+lib_deps = https://github.com/lovyan03/LovyanGFX.git#develop
+```
 
 ---
 
